@@ -1,0 +1,136 @@
+{% extends '@SOS/Management/validationFront.html.twig' %}
+{% block valider %}
+    <style type="text/css">
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: none;
+            border: 0 !important;
+            background: #2c3e50;
+            background-image: none;
+        }
+
+        /* Custom Select */
+        .select {
+            position: relative;
+            display: block;
+            width: 20em;
+            height: 3em;
+            line-height: 3;
+            background: #2c3e50;
+            overflow: hidden;
+            border-radius: .25em;
+        }
+
+        select {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0 0 0 .5em;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        /* Arrow */
+        .select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0 1em;
+            background: #34495e;
+            pointer-events: none;
+        }
+
+        /* Transition */
+        .select:hover::after {
+            color: #f39c12;
+        }
+
+        .select::after {
+            -webkit-transition: .25s all ease;
+            transition: .25s all ease;}
+    </style>
+    <style type="text/css">
+        table.paleBlueRows {
+            font-family: Georgia, serif;
+            border: 3px solid #FFFFFF;
+            background-color: #FFFFFF;
+            width: 350px;
+            height: 200px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        table.paleBlueRows td, table.paleBlueRows th {
+            border: 1px solid #FFFFFF;
+            padding: 3px 2px;
+        }
+
+        table.paleBlueRows tbody td {
+            font-size: 13px;
+        }
+
+        table.paleBlueRows tr:nth-child(even) {
+            background: #D0E4F5;
+        }
+    </style>
+    <table border="2" class="paleBlueRows">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Espece</th>
+            <th>Race</th>
+            <th>Sexe</th>
+            <th>Nom</th>
+            <th>Image1</th>
+            <th>Image2</th>
+            <th>Image3</th>
+            <th>Image4</th>
+            <th>Taille</th>
+            <th>Datenaissance</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for animal in animals %}
+            <tr>
+                <td>{{ animal.id }}</td>
+                <td>{{ animal.espece }}</td>
+                <td>{{ animal.race }}</td>
+                <td>{{ animal.sexe }}</td>
+                <td>{{ animal.nom }}</td>
+                <td><img src="{{ asset('uploads/images/evenement/'~ animal.image1) }}" height="110" width="110"  alt=""/></div>
+                    </td>
+                <td><img src="{{ asset('uploads/images/evenement/'~ animal.image2) }}"  height="110" width="110"   alt=""/></div>
+                    </td>
+                <td><img src="{{ asset('uploads/images/evenement/'~ animal.image3) }}"  height="110" width="110"   alt=""/></div>
+                    </td>
+                <td><img src="{{ asset('uploads/images/evenement/'~ animal.image4) }}"   height="110" width="110"   alt=""/></div>
+                    </td>
+                <td>{{ animal.taille }}</td>
+                <td>{% if animal.dateNaissance %}{{ animal.dateNaissance|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ animal.description }}</td>
+                <td>{{ animal.type }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('validerOK', { 'id': animal.id }) }}">Valider</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

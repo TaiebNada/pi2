@@ -1,0 +1,73 @@
+{% extends '@SOS/Management/input.html.twig' %}
+{% block SOS %}
+    <h3>Liste Des Clients</h3>
+<style type="text/css">
+    table.paleBlueRows {
+        font-family: Georgia, serif;
+        border: 3px solid #FFFFFF;
+        background-color: #FFFFFF;
+        width: 350px;
+        height: 200px;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    table.paleBlueRows td, table.paleBlueRows th {
+        border: 1px solid #FFFFFF;
+        padding: 3px 2px;
+    }
+
+    table.paleBlueRows tbody td {
+        font-size: 13px;
+    }
+
+    table.paleBlueRows tr:nth-child(even) {
+        background: #D0E4F5;
+    }
+</style>
+<table  class="paleBlueRows">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Nombre de Post</th>
+        <th>Last Login</th>
+        <th>Actions</th>
+        <th>Liste Des Animaux</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in user %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.emailCanonical }}</td>
+            <td>{{ user.password  }}</td>
+            <td>{{ user.nbPost }}</td>
+            <td>{% if user.lastLogin %}{{ user.lastLogin|date('Y-m-d') }}{% endif %}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('backoffice_delete_client', { 'id': user.id }) }}">Delete</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="{{ path('backoffice_client_contact', { 'id': user.id  }) }}">Contacter Par Mail</a>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('backoffice_list_animal_client', { 'id': user.id  }) }}">Voir</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

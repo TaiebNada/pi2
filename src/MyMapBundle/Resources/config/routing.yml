@@ -1,0 +1,3 @@
+my_map_homepage:
+    path:     /map
+    defaults: { _controller: MyMapBundle:Default:index }

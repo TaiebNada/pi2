@@ -1,0 +1,35 @@
+{% extends "FrontOffice/Vet/baseVet.html.twig" %}
+{% block Liste %}
+    <div class="desc1 span_3_of_2">
+        {% for voitures in m %}
+            <h3>{{ voitures.nom }} &nbsp {{ voitures.prenom }}</h3>
+            <p>Email : <a href="#">{{ voitures.mail }} click to contact </a></p>
+            <div class="det_nav">
+                <h4>Description:</h4>
+                <ul>
+                    Nom: {{ voitures.nom }} {{ voitures.prenom }}
+                </ul>
+                <ul>
+                    Num Telephone: {{ voitures.numTel }}
+                </ul>
+                <ul>
+                    <li>Email: {{ voitures.mail }}</li>
+                </ul>
+                <ul>
+                    <li>Adresse:  {{ voitures.adresse}}</li>
+                </ul>
+                <ul>
+                    <li>Joined le : </li>
+                </ul>
+                <ul>
+                    <li>rating </li>
+                </ul>
+            </div>
+
+            <div class="btn_form">
+                <a href="{{ path ('ModifierProfil',{'id': voitures.id }) }}">Modifier Mon Profil</a>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock %}

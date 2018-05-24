@@ -1,0 +1,136 @@
+animaux1_homepage:
+    path:     /
+    defaults: { _controller: Animaux1Bundle:Default:index }
+listeAnimaux:
+    path:     /listeAnimaux
+    defaults: { _controller: Animaux1Bundle:Animaux:afficheListeAnimaux }
+carteSuivi:
+    path:     /detail/{id}
+    defaults: { _controller: Animaux1Bundle:Animaux:afficheS }
+ajoutProfil:
+    path:     /ajoutProfil
+    defaults: { _controller: Animaux1Bundle:Animaux:ajoutProfil1 }
+deleteAnimal:
+    path:     /maListe/{id}
+    defaults: { _controller: Animaux1Bundle:Animaux:supprimer }
+modifierProfil:
+    path:     /modifierProfil/{id}
+    defaults: { _controller: Animaux1Bundle:Animaux:modifierProfil }
+rechercher:
+    path:     /recherche
+    defaults: { _controller: Animaux1Bundle:Animaux:rechercher }
+listeAnimaux:
+    path:     /listeAnimaux
+    defaults: { _controller: Animaux1Bundle:Animaux:afficheAnimauxClient }
+listeVetFront:
+    path:     /listeVetF
+    defaults: { _controller: Animaux1Bundle:Vet:afficheFront }
+listeVetBack:
+    path:     /listeVetB
+    defaults: { _controller: Animaux1Bundle:Vet:afficheBack }
+afficheDetailVet:
+    path:     /detailVetBack/{id}
+    defaults: { _controller: Animaux1Bundle:Vet:afficheDetailVet }
+supprimerVet:
+    path:     /listeVet/{id}
+    defaults: { _controller: Animaux1Bundle:Vet:supprimer }
+preDeleteVet:
+    path:     /preDelete/{id}
+    defaults: { _controller: Animaux1Bundle:Vet:preDelete }
+ajoutVet:
+    path:     /ajoutVet
+    defaults: { _controller: Animaux1Bundle:Vet:ajout }
+detailVet:
+    path:     /detailVet/{id}
+    defaults: { _controller: Animaux1Bundle:Vet:afficheDetail }
+listeCom:
+    path:     /listeCom
+    defaults: { _controller: Animaux1Bundle:CommentaireVet:affiche }
+ajoutCom:
+    path:     /ajoutCom
+    defaults: { _controller: Animaux1Bundle:CommentaireVet:ajout }
+ajout2:
+    path:     /ajout2
+    defaults: { _controller: Animaux1Bundle:Animaux:ajout }
+ajoutReclamation:
+    path:     /ajoutReclamation
+    defaults: { _controller: Animaux1Bundle:ReclamationVet:ajoutReclamation }
+listeReclamationFront:
+    path:     /listeReclamationF
+    defaults: { _controller: Animaux1Bundle:ReclamationVet:afficheReclamationFront }
+maListe:
+    path:     /maListe
+    defaults: { _controller: Animaux1Bundle:Animaux:afficheMaListe }
+detailAnimal:
+    path:     /detailAnimal/{id}
+    defaults: { _controller: Animaux1Bundle:Animaux:afficheDetail }
+ChangerVetRec:
+    path:     /ajoutRec/{id}
+    defaults: { _controller: Animaux1Bundle:ReclamationVet:ajoutReclamation }
+reclamation:
+    path:     /reclamation
+    defaults: { _controller: Animaux1Bundle:ReclamationVet:afficheMsg }
+updateSuivi:
+    path:     /updateSuivi/{id}
+    defaults: { _controller: Animaux1Bundle:Animaux:ajoutSuivi }
+maListeVet:
+    path:     /maListeVet
+    defaults: { _controller: Animaux1Bundle:Animaux:afficheMaListeVet }
+carteSuiviVet:
+    path:     /carteSuivi/{id}
+    defaults: { _controller: Animaux1Bundle:Animaux:afficheSVet }
+sureDeleteAnimal:
+    path:     /sureDelete/{id}
+    defaults: { _controller: Animaux1Bundle:Animaux:supprimerSure }
+vetProfil:
+    path:     /monProfil/{id}
+    defaults: { _controller: Animaux1Bundle:Vet:afficheProfil }
+ModifierProfil:
+    path:     /profilUpdate/{id}
+    defaults: { _controller: Animaux1Bundle:Vet:modifierProfil }
+listeReclamation:
+    path:     /listeRec
+    defaults: { _controller: Animaux1Bundle:ReclamationVet:afficheListeReclamation }
+afficherReclamation:
+     path:     /reclamation/{id}
+     defaults: { _controller: Animaux1Bundle:ReclamationVet:afficheRec}
+
+mailAdminClient:
+     path:     /repondreMail/{mailR}
+     defaults: { _controller: Animaux1Bundle:MailVet:mailClient}
+
+envoiMail:
+    path: /envoiMail/{mailR}
+    defaults: { _controller: Animaux1Bundle:MailVet:mail }
+my_app_mail_accuse:
+    path: /success
+    defaults: { _controller: Animaux1Bundle:MailVet:success}
+my_app_mail_accuse1:
+    path: /successBack
+    defaults: { _controller: Animaux1Bundle:MailVet:successBack}
+
+ajoutDemande:
+     path:     /ajoutDemande
+     defaults: { _controller: Animaux1Bundle:Demande:ajoutDemande}
+demandeRecu:
+     path:     /demandeRecu
+     defaults: { _controller: Animaux1Bundle:Demande:demandeRecu}
+listeDemande:
+      path:     /listeDemande
+      defaults: { _controller: Animaux1Bundle:Demande:listeDemande}
+afficherDemande:
+      path:     /detailDemande/{id}
+      defaults: { _controller: Animaux1Bundle:Demande:detailDemande}
+afficheJustificatif:
+      path:     /afficheJustificatif/{id}
+      defaults: { _controller: Animaux1Bundle:Demande:afficheJustificatif}
+pdf:
+      path:     /pdf
+      defaults: { _controller: Animaux1Bundle:Demande:pdf}
+repondreDemande:
+      path:     /repondreDemande/{mailR}
+      defaults: { _controller: Animaux1Bundle:MailVet:repondreDemande}
+my_app_mail_accuse2:
+    path: /successDemande
+    defaults: { _controller: Animaux1Bundle:MailVet:successDemande}
+

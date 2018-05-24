@@ -1,0 +1,47 @@
+{% extends "@Template/FrontOffice/products.html.twig" %}
+{% block evenements %}
+    {% for Evenements  in p %}
+        <div class="clearfix"></div>
+        </div>
+        <div class="box1">
+        <div class="col_1_of_single1 span_1_of_single1">
+        <div class="view1 view-fifth1">
+            <div class="top_box">
+                <h3 class="m_1"><a href="{{ path ('_single',
+                    {'id':produits.id,'nom':produits.nom,'prix':produits.prix,'image':produits.image})}}">
+                        <div style="font-size:160%;text-align:center;">
+                            <b>{{ Evenements.nomEvenement }}</b></div></a></h3>
+                <b>{{ Evenements.themeEvenement }}</b></div></a></h3>
+
+                <a href="{{ path ('_detailevenement',{'id':Evenements.id}) }}">
+
+                    <div class="grid_img">
+                        <div class="css3"></br><img src="{{ asset('uploads/images/evenement/'~ Evenements.imageEvenement) }}" width="200px" height="200px"></div>
+                        <div class="mask1">
+                            <div class="info" >Detail pour participer</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="price"><div style="font-family:courier;font-size:160%;text-align:center;">
+                    <b>{{ Evenements.dateEvenement|date('d/m/Y') }} DT</b></div></div>
+            </br>
+        </div>
+        <ul class="list2">
+
+            <br> <img src="{{ asset('images/plus.png')}}" alt=""/>
+
+            <a class="active-icon c1" style="color: #f9ecec"  href="">Ajouter au panier<br></a>
+
+
+
+        </ul>
+
+        <div align="center" style="background-color: gainsboro;padding-top: 22px"><b>
+                <a href="">Details Du Produit</a></b><br><br></div>
+
+        <div class="clear"></div>
+
+    {% endfor %}
+
+{% endblock %}

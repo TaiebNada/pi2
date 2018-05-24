@@ -1,0 +1,43 @@
+{% extends "@Bienetre/layoutbackoffice.html.twig" %}
+{% block evenements %}
+<h1>Recheche Modéle par Nom</h1>
+<form method="post">
+    Nom : <input type="text" name="nom">
+    <input type="submit" name="submit" value="recherche">
+
+
+
+
+
+</form>
+
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>lieu</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for Evenements in p %}
+        <tr>
+            <td> {{ Evenements.id }}</td>
+            <td> {{ Evenements.nomEvenement }}</td>
+            <td> {{ Evenements.themeEvenement }}</td>
+            <td> {{ Evenements.lieuEvenement }}</td>
+            <td> {{ Evenements.dateEvenement|date('d/m/Y') }}</td>
+            <td> {{ Evenements.heureEvenement|date('s/m/h') }}</td>
+            <td> {{ Evenements.descriptionEvenement }}</td>
+            <td> <a href="{{ path ('_updateevenement',{'id':Evenements.id}) }}">Update</a></td>
+            <td> <a href="{{ path ('_deleteevenement',{'id':Evenements.id}) }}">Delete</a></td>
+
+        </tr>
+    {% endfor %}
+
+    <tr>  <a href="{{ path ('_rechercheevenement') }}">Effectuer une recherche</a> </tr>
+
+
+</table>
+{% endblock %}

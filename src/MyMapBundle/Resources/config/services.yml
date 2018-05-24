@@ -1,0 +1,4 @@
+services:
+#    my_map.example:
+#        class: MyMapBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

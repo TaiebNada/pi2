@@ -1,0 +1,39 @@
+{% extends 'FrontOffice/Client/baseClient.html.twig' %}
+
+{% block Liste %}
+    {% for voitures in m %}
+<div class="box1">
+    <div class="col_1_of_single1 span_1_of_single1">
+        <div class="view1 view-fifth1">
+            <div class="top_box">
+                <h3 class="m_1">{{ voitures.nom }}</h3>
+                <p class="m_2">Localisation to add later</p>
+                <a href="{{ path ('detailVet',{'id': voitures.id }) }}">
+                    <div class="grid_img">
+                        <div class="css3"><img src="{{ asset ('Template/images/pic-5.jpg') }}" alt=""/></div>
+                        <div class="mask1">
+                            <div class="info">Afficher Detail</div>
+                        </div>
+                    </div>
+            </div>
+        </div></a>
+        <ul class="list2">
+            <li>
+
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li><a class="active-icon c1" href="{{ path ('detailVet',{'id': voitures.id })  }}">Contacter </a>
+                        <ul class="sub-icon1 list">
+                            <li><h3>par Mail</h3><a href=""></a></li>
+                            <li><p>Envoyer un mail depuis son profil </p></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+        {% endfor %}
+
+{% endblock %}

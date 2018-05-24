@@ -1,0 +1,38 @@
+{% extends "@Bienetre/layoutbackoffice.html.twig" %}
+{% block evenements %}
+    <h1>Liste des evenements</h1>
+    <table id="table">
+        <tr>
+            <th>Id commentaire</th>
+
+            <th>commentaire</th>
+            <th>email utilisateur commentaire</th>
+            <th>Date commentaire</th>
+
+
+
+        </tr>
+
+        {% for modeles in m %}
+            <tr>
+                <td> {{ modeles.id }}</td>
+                <td> {{ modeles.comm }}</td>
+
+                <td> {{ modeles.emailuser }}</td>
+                <td> {{ modeles.dateCommentaire|date('d/m/Y') }}</td>
+
+                <td> <a href="{{ path ('_deletecommentaire',{'id':modeles.id,'ideve':ideve}) }}">Delete</a></td>
+                <td> <a href="{{ path ('_envoyermaile',{'mailcomm':modeles.emailuser}) }}">avertir cet utilisateur</a></td>
+
+
+
+
+
+
+            </tr>
+        {% endfor %}
+
+
+
+    </table>
+{% endblock %}

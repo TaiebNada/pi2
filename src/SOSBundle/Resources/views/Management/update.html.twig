@@ -1,0 +1,92 @@
+{% extends "@SOS/Management/input.html.twig" %}
+{% block SOS %}
+
+
+    <div class="grid-form1">
+        <h1>Update</h1>
+        <div class="tab-content">
+            <div class="tab-pane active" id="horizontal-form">
+                {{ form_start(f, {'attr': {'class': 'form-horizontal'}}) }}
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Nom :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.nom, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Numero :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.numero, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Taille :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.taille, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Date Naissance :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.dateNaissance, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Sexe :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.sexe, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Race :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.race, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Espece :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.espece, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Image 1 :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.image1, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Image 2 :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.image2, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Image 3 :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.image3, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Image 4 :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.image4, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Description :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.description, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="col-sm-8 col-sm-offset-2">
+                    {{ form_widget(f.Ajouter, {'att':{'class':'btn-primary btn'}})}}
+                </div>
+
+                {{ form_end(f) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

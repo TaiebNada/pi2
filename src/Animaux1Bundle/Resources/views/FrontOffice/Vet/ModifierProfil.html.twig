@@ -1,0 +1,64 @@
+{% extends 'FrontOffice/Vet/baseVet.html.twig' %}
+
+{% block Liste %}
+    <div class="grid-form1">
+        <h3>Modifier Mon Profil </h3>
+        <div class="tab-content">
+            <div class="tab-pane active" id="horizontal-form">
+                {{ form_start(f, {'attr': {'class': 'form-horizontal'}}) }}
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Nom :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.nom, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">prenom :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.prenom, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Cin :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.cin, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Date Naissance :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.dateNaissance, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Mobile :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.numTel, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Email :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.mail, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Adresse :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.adresse, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+
+
+                <div class="col-sm-8 col-sm-offset-2">
+                    {{ form_widget(f.ajout, {'label':'Modifier'})}}
+                </div>
+
+                {{ form_end(f) }}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'BackOffice/home.html.twig' %}
+
+{% block listeSuivi %}
+    <h2>Liste Demande </h2>
+    <table id="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>mail</th>
+            <th>Delegation</th>
+            <th>Date Demande</th>
+            <th>Etat</th>
+            <th>Traiter</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for voitures in m %}
+        <tr>
+            <td> {{ voitures.nom }}</td>
+            <td> {{ voitures.prenom }}</td>
+            <td> {{ voitures.mail }}</td>
+            <td> {{ voitures.delegation }}</td>
+            <td>{{ voitures.dateD|date('Y-m-d') }}</td>
+            <td>{{ voitures.type }}</td>
+            <td><a href="{{ path ('afficherDemande',{'id':voitures.id}) }}"> Afficher detail</a> </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}

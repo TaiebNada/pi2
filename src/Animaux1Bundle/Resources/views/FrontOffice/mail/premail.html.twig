@@ -1,0 +1,40 @@
+{% extends 'FrontOffice/Client/baseClient.html.twig' %}
+{% block Liste %}
+
+<div class="grid-form1">
+    <h3>Envoyer un mail à  {{ nom }} </h3>
+    <div class="tab-content">
+        <div class="tab-pane active" id="horizontal-form">
+            <form class="form-horizontal" method="post" action="{{ path("envoiMail") }}">
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Email de {{ nom }}</label>
+                    <div class="col-sm-8">
+                        <input type="text" value="{{ email }}" name="sendTo" disabled class="form-control1" id="focusedinput" placeholder="Default Input">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="disabledinput" class="col-sm-2 control-label">Objet</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="titre" class="form-control1" id="disabledinput" placeholder="Objet de la réclamation">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-2 control-label">Reponse sur la réclamation</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="sujet" class="form-control1" id="inputPassword" placeholder="Réponse..">
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <button class="btn-primary btn">Submit</button>
+                            <button type="reset" class="btn-inverse btn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

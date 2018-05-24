@@ -1,0 +1,28 @@
+{% extends "FrontOffice/base1.html.twig" %}
+{% block Liste %}
+
+<h3>Liste de vos réclamations</h3>
+    <table border="1">
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Titre</th>
+            <th>Subject</th>
+            <th>Date reclamation</th>
+            <th>Image Reclamation</th>
+        </tr>
+        {% for modeles in m %}
+            <tr>
+                <td> {{ modeles.nom }}</td>
+                <td> {{ modeles.mail }}</td>
+                <td> {{ modeles.mobile }}</td>
+                <td> {{ modeles.titre }}</td>
+                <td> {{ modeles.subject }}</td>
+                <td> {{ modeles.dateR|date(('Y-m-d H:i:s')) }}</td>
+                <td> {{ modeles.image}}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}

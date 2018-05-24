@@ -1,0 +1,25 @@
+{% extends 'BackOffice/home.html.twig' %}
+ {% block listeSuivi %}
+     <link href="{{ asset ('SuiviSante/css/style.css') }}" rel='stylesheet' type='text/css'/>
+     <link href="{{ asset ('SuiviSante/css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+     <div>
+         {% for voitures in m %}
+             <div>
+                 <h3>Etes vous sur que vous voulez supprimer  {{ voitures.nom  }} {{ voitures.prenom  }}</h3>
+                 <!--IMAGE :3 -->
+                 </br>
+
+             </div>
+             <div class="button">
+                 <a href="{{ path ('supprimerVet', {'id': voitures.id }) }}">Supprimer</a><span></span>
+                 <a href="{{ path ('afficheDetailVet',{'id': voitures.id }) }}">Annuler </a>
+
+             </div>
+
+         {% endfor %}
+
+     </div>
+
+
+ {% endblock %}

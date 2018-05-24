@@ -1,0 +1,15 @@
+{% extends 'BackOffice/home.html.twig' %}
+{% block listeSuivi %}
+    <link href="{{ asset ('SuiviSante/css/style.css') }}" rel='stylesheet' type='text/css'/>
+    <link href="{{ asset ('SuiviSante/css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <div>
+        <h3>email envoyé avec succès.</h3>
+        <!--IMAGE :3 -->
+        </br>
+
+    </div>
+    <div class="button">
+        <a href="{{ path ('listeReclamation') }}">Retour Liste Réclamation</a><span></span>
+    </div>
+
+{% endblock %}

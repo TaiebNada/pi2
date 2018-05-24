@@ -1,0 +1,113 @@
+{% extends 'BackOffice/home.html.twig' %}
+
+{% block listeSuivi %}
+<div class="grid-form1">
+    <h3>Profil Veterinaire </h3>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link href="{{ asset ('SuiviSante/css/style.css') }}" rel='stylesheet' type='text/css'/>
+        <link href="{{ asset ('SuiviSante/css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+    </head>
+    <body>
+    <!-- <h1>Suivi Santé Animal</h1>-->
+    <div class="main-agileits">
+        {% for voitures in m %}
+        <div class="right-wthree">
+            <!--image :3 -->
+
+            <h2>{{ voitures.nom  }}</h2>
+        </div>
+        <div class="left-w3ls">
+            <ul class="address">
+
+                <li>
+                    <ul class="address-text">
+                        <li><b>Nom </b></li>
+                        <li>: {{ voitures.nom }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Prenom </b></li>
+                        <li>: {{ voitures.prenom}}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Cin</b></li>
+                        <li>: {{ voitures.cin }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Date naissance</b></li>
+                        <li>: {{ voitures.dateNaissance|date('Y-m-d') }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Mobile</b></li>
+                        <li>: {{ voitures.numTel }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Mail </b></li>
+                        <li>: {{ voitures.mail }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Adresse </b></li>
+                        <li>: {{ voitures.adresse }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>last login  </b></li>
+                        <li>: fos: vet extends user : last logged in</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Nbr animaux adhérés </b></li>
+                        <li>: calcul :3 </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <div class="button">
+
+                    <a href="">Contacter </a>
+
+            </div>
+        </br>
+            <div class="button">
+                     <a href="{{ path ('preDeleteVet',{'id':voitures.id}) }}">Supprimer </a>
+
+            </div>
+
+            {% endfor %}
+
+            <!--
+            <div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
+                <div class="agileits_modal_body">
+                    <iframe src="https://player.vimeo.com/video/8483438?title=0&byline=0&portrait=0"></iframe>
+                </div>
+            </div>
+            -->
+            <!-- //pop-up-box -->
+
+        </div>
+
+        <div class="clear"></div>
+    </div>
+    <footer>
+        <p class="agileinfo"> <a href="{{ path ('listeVetBack') }}">Retour à la liste </a></p>
+    </footer>
+    </body>
+    </html>
+    {% endblock %}

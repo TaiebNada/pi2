@@ -1,0 +1,8 @@
+
+{% extends "@Bienetre/layoutbackoffice.html.twig" %}
+{% block evenements %}
+    <h1>Update</h1>
+{{ form_start (form) }}
+{{ form_widget(form.Ajouter,{'label':'Modifier'}) }}
+{{ form_end (form) }}
+{% endblock %}

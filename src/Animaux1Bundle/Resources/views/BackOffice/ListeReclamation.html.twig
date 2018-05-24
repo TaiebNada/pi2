@@ -1,0 +1,36 @@
+{% extends 'BackOffice/home.html.twig' %}
+
+{% block listeSuivi %}
+    <h2>Liste des réclamations réçus </h2>
+    <table id="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Titre</th>
+            <th>Date</th>
+            <th>Vet concerné</th>
+            <th>Traiter</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for voitures in m %}
+        <tr>
+            <td> {{ voitures.nom }}</td>
+            <td> {{ voitures.mail }}</td>
+            <td> {{ voitures.mobile }}</td>
+            <td> {{ voitures.titre }}</td>
+            <td> {{ voitures.dateR|date('Y-m-d') }}</td>
+            <td> nom vet concerné joiture </td>
+            <td><a href="{{ path ('afficherReclamation',{'id':voitures.id}) }}"> Afficher detail</a> </td>
+            <!--   <td>file upload </td>-->
+
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}

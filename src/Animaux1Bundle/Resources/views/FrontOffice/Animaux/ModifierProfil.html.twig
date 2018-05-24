@@ -1,0 +1,70 @@
+{% extends 'FrontOffice/Client/baseClient.html.twig' %}
+
+{% block Liste %}
+    <div class="grid-form1">
+        <h3>Modifier le profil de mon animal</h3>
+        <div class="tab-content">
+            <div class="tab-pane active" id="horizontal-form">
+                {{ form_start(f, {'attr': {'class': 'form-horizontal'}}) }}
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Nom :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.nom, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Sexe :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.sexe, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Date Naissance :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.dateNaissance, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Race :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.race, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Espece :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.espece, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Description :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.description, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Vet :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.vet, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Image :</label>
+                    <div class="col-sm-8">
+                        {{ form_widget(f.imageFile, {'att':{'class':'form-control1'}}) }}
+                    </div>
+                </div>
+
+                <div class="col-sm-8 col-sm-offset-2">
+                    {{ form_widget(f.Ajouter, {'label':'Modifier'})}}
+                </div>
+
+                {{ form_end(f) }}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

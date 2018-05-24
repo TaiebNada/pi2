@@ -1,0 +1,81 @@
+boutique_homepage:
+    path:     /
+    defaults: { _controller: BoutiqueBundle:Default:index }
+ajout:
+    path:     /ajout
+    defaults: { _controller: BoutiqueBundle:Reclamation:ajout2 }
+affiche:
+    path:     /affiche
+    defaults: { _controller: BoutiqueBundle:Reclamation:affiche }
+dashboard:
+    path:     /dashboard
+    defaults: { _controller: BoutiqueBundle:Default:dashboard }
+
+mail:
+    path:     /mail
+    defaults: { _controller: BoutiqueBundle:Default:mail }
+one:
+    path:     /one
+    defaults: { _controller: BoutiqueBundle:Default:index1 }
+premail1:
+    path:     /premail1
+    defaults: { _controller: BoutiqueBundle:Default:premail }
+Delete:
+    path:     /Delete/{id}
+    defaults: { _controller: BoutiqueBundle:Reclamation:Delete }
+recherche:
+    path:     /recherche
+    defaults: { _controller: BoutiqueBundle:Reclamation:recherche }
+traiter:
+    path:     /traiter
+    defaults: { _controller: BoutiqueBundle:Reclamation:traiter }
+ajout2:
+    path:     /ajout2
+    defaults: { _controller: BoutiqueBundle:Reclamation:Ajout2 }
+single:
+    path:     /single
+    defaults: { _controller: BoutiqueBundle:Default:single }
+affichec:
+    path:     /affichec
+    defaults: { _controller: BoutiqueBundle:Commentaire:affichec }
+ajoutc:
+    path:     /ajoutc
+    defaults: { _controller: BoutiqueBundle:Commentaire:ajoutc }
+supprimerc:
+    path:     /supprimerc/{id}
+    defaults: { _controller: BoutiqueBundle:Commentaire:supprimerc }
+ajoutc2:
+    path:     /ajoutc2
+    defaults: { _controller: BoutiqueBundle:Commentaire:ajoutc2 }
+nada2:
+    path:     /nada2
+    defaults: { _controller: BoutiqueBundle:Default:nada }
+stat:
+    path:     /stat
+    defaults: { _controller: BoutiqueBundle:Default:stat }
+nb:
+    path:     /nb
+    defaults: { _controller: BoutiqueBundle:Default:nb }
+loginSession:
+    path:     /loginSession
+    defaults: { _controller: BoutiqueBundle:Default:loginSession }
+reclamation2:
+    path:     /reclamation2
+    defaults: { _controller: BoutiqueBundle:Default:affiche }
+pdf2:
+    path:     /pdf2
+    defaults: { _controller: BoutiqueBundle:Default:pdf }
+naa:
+    path:     /naa
+    defaults: { _controller: BoutiqueBundle:Default:premail1 }
+Delete1:
+    path:     /Delete1/{id}
+    defaults: { _controller: BoutiqueBundle:Reclamation:Delete }
+EnvoyerMail:
+    path:     /EnvoyerMail
+    defaults: { _controller: BoutiqueBundle:Default:EnvoyerMail }
+recherche2:
+    path:     /recherche2
+    defaults: { _controller: BoutiqueBundle:Reclamation:recherche }
+
+

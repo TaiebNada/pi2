@@ -1,0 +1,27 @@
+{% extends 'BackOffice/home.html.twig' %}
+{% block listeSuivi %}
+    <body>
+
+    <h3><p> Répondre à la reclamation </p></h3>
+    {{ form_start (form) }}
+    <table>
+        <tr>
+            <td> Nom </td>
+            <td> {{ form_widget (form.nom) }} </td>
+        </tr>
+        <tr>
+            <td> Prenom </td>
+            <td> {{ form_widget (form.prenom) }} </td>
+        </tr>
+        <tr>
+            <td> Téléphone </td>
+            <td> {{ form_widget (form.tel) }} </td>
+        </tr>
+        <tr>
+            <td> Text </td>
+            <td> {{ form_widget (form.text) }} </td>
+        </tr>
+    </table>
+    {{ form_end (form) }}
+    </body>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'BackOffice/home.html.twig' %}
+
+{% block listeSuivi %}
+    <h2>Liste Suivi Santé </h2>
+<table id="table">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Race</th>
+        <th>Espece</th>
+        <th>Sexe</th>
+        <th>Nom Vet</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        {% for voitures in m %}
+    <tr>
+        <td> {{ voitures.nom }}</td>
+        <td> {{ voitures.race }}</td>
+        <td> {{ voitures.espece }}</td>
+        <td> {{ voitures.sexe }}</td>
+        <td>{{ voitures.vet.nom }}</td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

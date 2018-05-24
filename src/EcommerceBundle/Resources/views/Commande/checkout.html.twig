@@ -1,0 +1,129 @@
+{% extends '@Template/FrontOffice/commande.html.twig' %}
+{% set total=0 %}
+{% block body %}
+
+    <style type="text/css">html, body,#map-canvas {height: 100%;margin: 0;padding: 0;}</style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZq9JNHzH_u0fv2hWDsY6dy7yfMMeZygA"
+            type="text/javascript"></script>
+    <input name="Latitude" id="lat" value={{ Latitudes }} />
+    <input id="long" value={{ Longitudes }}/>
+    <div id="map-canvas" style="width: 500px; height: 400px"></div>
+
+    <section class="check_out_area">
+        <div class="container">
+            <div class="row">
+                <form method="post">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="check_out_left">
+
+
+
+                                <div class="form-group col-md-6">
+                                    <h4><b>Choisir votre méthode de paiement : </b></h4>
+
+                                </div>
+                            </br>
+                                </br>
+                                <div class="form-group col-md-6">
+
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <p>
+                                        <input id="direct-transfer"  type="radio" name="optradio" value="Virement banquaire" class="input-chkbox" required>
+                                        <label><img src="{{ asset ('images/VisaMasterCard.jpg') }}" style="width: 50px;height: 25px"> Virement bancaire direct </label>
+                                    </p>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <p>
+                                        <input id="paypal-transfer" type="radio" name="optradio" value="Paypal" class="input-chkbox">
+                                        <img src="{{ asset ('images/paypal.png') }}" style="width: 25px;height: 25px"><b>Paypal</b>
+
+
+                                    </p>
+                                </div>
+                                <div class="form-group col-md-6">
+
+                                </div>
+                                <div class="form-group col-md-6">
+
+                                </div>
+                                <div class="form-group col-md-12">
+
+                                </div>
+                                <div class="creat_account">
+
+                                </div>
+                                <input type="hidden" name="idConnecte" value="{{ app.user.username }}">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="order_box">
+                            <h2>Votre commande</h2>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Références</th>
+                                    <th>Quantité</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {% for produit in produits %}
+                                    <tr>
+
+                                        <td>{{ produit.nom }}</td>
+
+                                        <td>{{ panier[produit.id] }}</td>
+                                        <td>{{ produit.prix * panier[produit.id] }} DT</td>
+
+                                    </tr>
+                                    {% set total = total + (produit.prix * panier[produit.id]) %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <dl class="dl-horizontal pull-right">
+                                <dt>Total:</dt>
+                                <dd>{{ total }} DT</dd>
+                            </dl>
+                            </div>
+
+                        <input type="hidden" name="montant" value="{{ total }}">
+
+                        <button type="submit" class="btn login_btn" value="submit">Place Order</button>
+
+                        </div>
+                    <br>
+                    <h2 style="padding-left: 20px">Livraison</h2>
+                    <b>Saisir Votre Adresse</b>
+                    <br>
+
+                        <input type="text" name="addresse" placeholder="Addresse..">
+                        <br>
+                        <br>
+                        <b>Choisir votre region</b>
+                        <br>
+                       <div style="padding-left: 20px"> <select name="region">
+                            <option value="Nord">Nord</option>
+                            <option value="Milieu">Milieu</option>
+                            <option value="Sud">Sud</option>
+                        </select>
+                       </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+

@@ -1,0 +1,42 @@
+{% extends "@Template/BackOffice/produits.html.twig" %}
+{% block produits %}
+<h1>Recheche Modéle par Nom</h1>
+
+<form method="post">
+    Nom : <input type="text" name="nom">
+    <input type="submit" name="submit" value="recherche">
+
+
+
+
+
+</form>
+
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Region</th>
+        <th>Image</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+    </tr>
+
+    {% for livreurs in p %}
+        <tr>
+            <td> {{ livreurs.id }}</td>
+            <td> {{ livreurs.nom }}</td>
+            <td> {{ livreurs.region }}</td>
+            <td><img src="{{ asset('uploads/images/' ~ livreurs.image) }}" width="50px" height="50px"></td>
+            <td> <a href="{{ path ('_updatelivreur',{'id':livreurs.id}) }}">Update</a></td>
+            <td> <a href="{{ path ('_deletelivreur',{'id':livreurs.id}) }}">Delete</a></td>
+
+        </tr>
+    {% endfor %}
+
+
+
+
+</table>
+{% endblock %}

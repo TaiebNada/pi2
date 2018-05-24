@@ -1,0 +1,38 @@
+{% extends 'FrontOffice/Vet/baseVet.html.twig' %}
+
+{% block Liste %}
+
+    {% for voitures in m %}
+        <div class="box1">
+            <div class="col_1_of_single1 span_1_of_single1">
+                <div class="view1 view-fifth1">
+                    <div class="top_box">
+                        <h3 class="m_1">{{ voitures.nom }}</h3>
+                        <p class="m_2">Date last updated le : </p>
+                        <div class="grid_img">
+                            <div class="css3"><img src="{{ asset('uploads/images/'~ voitures.imageanimal) }}" alt=""/></div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list2">
+                    <li>
+                        <img src="images/plus.png" alt=""/>
+                        <ul class="icon1 sub-icon1 profile_img">
+                            <li><a class="active-icon c1" href="{{ path ('carteSuiviVet',{'id': voitures.id }) }}">Afficher Carte</a>
+                                <ul class="sub-icon1 list">
+                                    <li><p>Afficher carte suivi santé</p></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    {% endfor %}
+    <div class="btn_form">
+      <!--  <a  href="{{ path ('ajoutProfil') }}">Ajouter un animal</a>-->
+    </div>
+
+{% endblock %}

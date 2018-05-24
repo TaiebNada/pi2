@@ -1,0 +1,34 @@
+
+{{ user }}
+{{ email }}
+
+<h1>Liste de toutes mes reclamations</h1>
+
+<table border="4" bordercolor="grey"
+       >
+    <thead>
+    <tr>
+        <th>Utilisateur</th>
+        <th>Mon email</th>
+        <th>Mon numero</th>
+        <th>Titre de mes reclamations</th>
+        <th>Mes reclamations</th>
+        <th>Date du reclamation</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for modeles in m %}
+        <tr>
+            <td> {{ modeles.nom }}</td>
+            <td> {{ modeles.email }}</td>
+            <td> {{ modeles.mobile }}</td>
+            <td> {{ modeles.titre }}</td>
+            <td> {{ modeles.subject }}</td>
+            <td> {{ modeles.dateR|date(('Y-m-d a H:i:s')) }}</td>
+
+
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>

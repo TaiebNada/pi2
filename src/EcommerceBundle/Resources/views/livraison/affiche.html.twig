@@ -1,0 +1,31 @@
+{% extends "@Template/BackOffice/produits.html.twig" %}
+{% block produits %}
+<h1>Liste des livraisons</h1>
+
+    <tr>
+        <th>Id</th>
+        <th>Nom Livreur</th>
+        <th>Id Client</th>
+        <th>Adresse Client</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+    </tr>
+
+    {% for livraisons in p %}
+    <tr>
+        <td> {{ livraisons.id }}</td>
+        <td> {{ livraisons.nomLivreur }}</td>
+        <td> {{ livraisons.idClient }}</td>
+        <td> {{ livraisons.addresseClient }}</td>
+
+        <td> <a href="{{ path ('_updatelivraison',{'id':livraisons.id}) }}">Update</a></td>
+        <td> <a href="{{ path ('_deletelivraison',{'id':livraisons.id}) }}">Delete</a></td>
+
+    </tr>
+    {% endfor %}
+
+   <tr>  <a href="{{ path ('_recherchelivraison') }}">Effectuer une recherche</a> </tr>
+
+
+{% endblock %}
+

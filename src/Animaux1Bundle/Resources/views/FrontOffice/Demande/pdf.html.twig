@@ -1,0 +1,22 @@
+
+
+    {% for voitures in m %}
+        <h3>Demande N  {{ voitures.id  }}</h3>
+        </br>
+            Nom:  {{ voitures.nom }}
+        </br>
+        Prenom {{ voitures.prenom }}
+        </br>
+        cin {{ voitures.cin }}
+        </br>
+        Date naissance {{ voitures.dateNaissance|date('Y-m-d') }}
+        </br>
+        Mobile  {{ voitures.numTel}}
+        </br>
+        Mail {{ voitures.mail }}
+        </br>
+        Adresse {{ voitures.adresse }}
+        </br>
+        Delegation{{ voitures.delegation }}
+    {% endfor %}
+

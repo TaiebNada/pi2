@@ -1,0 +1,27 @@
+{% extends "FrontOffice/base1.html.twig" %}
+{% block Liste %}
+    <div class="container">
+        <div class="contact">
+
+            <div class="contact-form">
+                <h2>Remplir ce formulaire pour passer une réclamation</h2>
+                </br>
+
+
+
+
+
+                {{ form_start (form) }}
+                {{ form_end (form) }}
+
+
+
+
+
+            </div>
+            <div class="clearfix"></div>
+
+            <h6><a href="{{ path("affiche") }}" >Cliquer ici pour consulter vos reclamations</a></h6>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'FrontOffice/Client/baseClient.html.twig' %}
+
+{% block Liste %}
+<div class="grid-form1">
+    <h3>Profil </h3>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>profil de mon animal </title>
+        <link href="{{ asset ('SuiviSante/css/style.css') }}" rel='stylesheet' type='text/css'/>
+        <link href="{{ asset ('SuiviSante/css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+    </head>
+    <body>
+    <!-- <h1>Suivi Santé Animal</h1>-->
+    <div class="main-agileits">
+        {% for voitures in m %}
+        <div class="right-wthree">
+            <img src="{{ asset('uploads/images/evenement/'~ voitures.image) }}" alt="image"  width="300" height="400"/>
+            <!-- <img src="{{ asset('images/') }}" alt=" {{ voitures.image }}" style="width: 50px; height: 50px" />-->
+
+            <h2>{{ voitures.nom  }}</h2>
+        </div>
+        <div class="left-w3ls">
+            <ul class="address">
+
+                <li>
+                    <ul class="address-text">
+                        <li><b>Nom </b></li>
+                        <li>: {{ voitures.nom }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Nom de mon vet </b></li>
+                        <li>: {{ voitures.vet.nom }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Nom de mon vet </b></li>
+                        <li>: {{ voitures.vet.mail }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Race</b></li>
+                        <li>: {{ voitures.race }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Taille</b></li>
+                        <li>: {{ voitures.taille }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Poids</b></li>
+                        <li>: {{ voitures.poids }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Date de Naissance </b></li>
+                        <li>: {{ voitures.dateNaissance|date('Y-m-d') }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Espece </b></li>
+                        <li>: {{ voitures.espece }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Sexe</b></li>
+                        <li>: {{ voitures.sexe }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Date derniere visite </b></li>
+                        <li>: {{ voitures.dateVisiteD|date('Y-m-d') }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Date Vaccin prochain </b></li>
+                        <li>: {{ voitures.dateVaccin|date('Y-m-d') }}</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>Description</b></li>
+                        <li>: {{ voitures.description }}</li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <div class="btn_form">
+                    <a href="">Contacter mon Vet</a>
+            </div>
+
+
+
+
+
+
+            <!--
+            <div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
+                <div class="agileits_modal_body">
+                    <iframe src="https://player.vimeo.com/video/8483438?title=0&byline=0&portrait=0"></iframe>
+                </div>
+            </div>
+            -->
+            <!-- //pop-up-box -->
+
+        </div>
+
+        <div class="clear"></div>
+    </div>
+    <footer>
+        <p class="agileinfo"> <a href="{{ path ('detailAnimal',{'id': voitures.id }) }}">Retour </a></p>
+        {% endfor %}
+    </footer>
+    </body>
+    </html>
+    {% endblock %}

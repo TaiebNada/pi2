@@ -1,0 +1,11 @@
+
+
+_grapheChartLine:
+    path: /chartline
+    defaults: { _controller: GrapheBundle:Graphe:chartLine }
+_grapheHistogramme:
+    path: /histogramme
+    defaults: { _controller: GrapheBundle:Graphe:chartHistogramme }
+_graphePie:
+    path: /pie
+    defaults: { _controller: GrapheBundle:Graphe:chartPie }

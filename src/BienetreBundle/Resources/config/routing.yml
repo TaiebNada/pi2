@@ -1,0 +1,112 @@
+_acceuilfront:
+    path:     /acceuil
+    defaults: { _controller: BienetreBundle:Evenement:acceuil }
+
+bienetre_homepage:
+    path:     /
+    defaults: { _controller: BienetreBundle:Default:index }
+_ajoutevenement:
+    path:     /Ajoutevenement
+    defaults: { _controller: BienetreBundle:Evenement:Ajout }
+
+_dashboard:
+    path:     /Dashboards
+    defaults: { _controller: BienetreBundle:Evenement:Dashboard }
+
+_updateevenement:
+    path:     /Updateevenement/{id}
+    defaults: { _controller: BienetreBundle:Evenement:Update }
+
+_participerevenement:
+    path:     /pariciperevenement/{id}
+    defaults: { _controller: BienetreBundle:Evenement:Participerevenement }
+_annulerevenement:
+    path:     /annulerevenement/{id}
+    defaults: { _controller: BienetreBundle:Evenement:Annulerevenement }
+
+_deleteevenement:
+    path:     /Deleteevenement/{id}
+    defaults: { _controller: BienetreBundle:Evenement:Delete }
+
+
+_deletecommentaire:
+    path:     /Deletecommentaire/{id}/{ideve}
+    defaults: { _controller: BienetreBundle:CommentaireEvenement:SupprimerCommentaire }
+
+_detailevenement:
+    path:     /Detailevenement/{id}
+    defaults: { _controller: BienetreBundle:Evenement:detail }
+
+
+_affichecommentaire:
+    path:     /Detailcommentaire/{id}
+    defaults: { _controller: BienetreBundle:Evenement:detailcommentaire }
+
+_rechercheevenement:
+    path:     /rechercheevenement
+    defaults: { _controller: BienetreBundle:Evenement:Recherche }
+
+_afficheevenement:
+    path:     /Afficheevenement
+    defaults: { _controller: BienetreBundle:Evenement:Affiche }
+_afficheevenement2:
+    path:     /Afficheevenement2
+    defaults: { _controller: BienetreBundle:Evenement:Affiche2 }
+
+_afficheevenementancien2:
+    path:     /Afficheevenementancien2
+    defaults: { _controller: BienetreBundle:Evenement:Afficheancien2 }
+_afficheevenementprochain2:
+    path:     /Afficheevenement2
+    defaults: { _controller: BienetreBundle:Evenement:Afficheprochain2 }
+_statistique:
+    path : /State
+    defaults: { _controller: BienetreBundle:Evenement:chartHistogramme}
+
+_envoyermaile:
+    path:     /Envoyere/{mailcomm}
+    defaults: { _controller: BienetreBundle:Evenement:index }
+
+my_app_mail_accusee:
+    path:     /successa
+    defaults: { _controller: BienetreBundle:Evenement:successa }
+
+_alll:
+    path:     /Alll
+    defaults: { _controller: BienetreBundle:Evenement:Alll }
+
+_alllCommentaire:
+    path:     /AlllCommentaire{id}
+    defaults: { _controller: BienetreBundle:Evenement:AlllCommentaire }
+
+_ajouttevenement:
+    path:     /Ajouttevenement
+    defaults: { _controller: BienetreBundle:Evenement:Ajoutt }
+
+
+_participerrevenement:
+    path:     /Participerr{id}/{idutil}
+    defaults: { _controller: BienetreBundle:Evenement:Participerr }
+
+
+_Existe:
+    path:     /Existe{id}/{idutil}
+    defaults: { _controller: BienetreBundle:Evenement:Existe }
+
+
+
+_AjouttCommentaire:
+    path:     /AjouttCommentaire{id}
+    defaults: { _controller: BienetreBundle:Evenement:AjouttCommentaire }
+
+_verifsupp:
+    path:     /verifsupp{id}
+    defaults: { _controller: BienetreBundle:Evenement:verifsupp }
+
+_supprimerreve:
+    path:     /supprimerreve{id}
+    defaults: { _controller: BienetreBundle:Evenement:supprimerreve }
+
+_supprimerrcom:
+    path:     /supprimerrcom{id}
+    defaults: { _controller: BienetreBundle:Evenement:supprimerrcom }

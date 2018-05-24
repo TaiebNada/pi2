@@ -1,0 +1,6 @@
+{% extends "@MyMap/Default/base.html.twig" %}
+{% block container %}
+    <input id="lat" value={{ Latitudes }}/>
+    <input id="long" value={{ Longitudes }}/>
+    <div id="map-canvas" style="width: 500px; height: 400px"></div>
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "@Bienetre/detailevenementfront.html.twig" %}
+{% block evenementfront %}
+
+        <div class="women_main">
+        <div class="container">
+
+        <div class="row single">
+        <div class="col-md-9 span-single">
+            <div class="single_left">
+                <div class="grid images_3_of_2">
+                    <ul id="etalage">
+                        <li>
+                            <a href="{{ asset('optionallink.html')  }}">
+
+                                {% if "now"|date('Y-m-d') < p.dateEvenement|date('Ymd') %}
+
+                                      l évènement est à venir vous pouvez y participer
+                                {% else %}l évènement est terminé
+                                      
+                                {% endif %}
+                                <img class="etalage_thumb_image" src="{{ asset('uploads/images/evenement/'~ p.imageEvenement) }}" width="150" height="150" class="img-responsive" />
+                                <img class="etalage_source_image" src="{{ asset('uploads/images/evenement/'~ p.imageEvenement) }}" width="150" height="150"class="img-responsive" title="" />
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="desc1 span_3_of_2">
+                    <h3></h3>
+                    <p>{{ p.nomEvenement}}<a href="#"></a></p>
+                    <div class="det_nav">
+
+                    </div>
+                    <div class="filter-by-color">
+                        <h3>date de l'evenement                 {{ p.dateEvenement|date('d/m/Y') }}</h3>
+                        </br></br>
+                        <h4>heure et minute de l'evenement             {{ p.heureEvenement|date('m/h') }}</h4>
+                        </br></br></br></br>
+                        <h4>il ya   {{ p.nbrParticipant }}  participants  jusqu'a maintenant </h4>
+                        </br></br>
+                        <h4>le nombre maximal de participants a cet evenement est     {{ p.nbrMAXParticipant }}</h4>
+
+                    </div>
+
+
+                    </br></br></br>
+
+
+                    {% if  (p.nbrMAXParticipant > p.nbrParticipant) and ("now"|date('Y-m-d') < p.dateEvenement|date('Ymd'))%}
+                    {% if Participant %}
+                    {% if Participant.participer==1 %}
+
+                    <ul class="list2">
+                        <ul class="list2">
+
+                            <li>
+                                <img src="{{ asset('images/plus.png')  }}" alt=""/>
+                                <ul class="icon1 sub-icon1 profile_img">
+
+                                    <li><a class="active-icon c1" href="{{ path ('_annulerevenement',{'id':p.id}) }}"  >j'annule la participation </a>
+                                        <ul class="sub-icon1 list">
+                                            <li><h3>annuler</h3><a href=""></a></li>
+                                            <li><p>cliquer ici pour annuler votre partcipation   <a href=""></a></p></li>
+                                        </ul>
+                                    </li>
+
+                    </ul>
+                    {% endif %}
+                    {% else  %}
+
+                    <ul class="list2">
+
+                        <li>
+                            <img src="{{ asset('images/plus.png')  }}" alt=""/>
+                            <ul class="icon1 sub-icon1 profile_img">
+
+                                <li><a class="active-icon c1" href="{{ path ('_participerevenement',{'id':p.id}) }}"  >je participe </a>
+                                    <ul class="sub-icon1 list">
+                                        <li><h3>participer</h3><a href=""></a></li>
+                                        <li><p>cliquer ici pour participer a cet evenement  <a href=""></a></p></li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                                {% endif %}{% endif %}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <br class="single-bottom1">
+    </br> </br>
+    <div class="product_right">
+    <h3 class="m_2">description</h3>
+    </div>
+                <p class="prod-desc">{{ p.descriptionEvenement}}</p>
+
+
+
+                </br> </br>
+    <div class="product_right">
+        <h3 class="m_2">les commentaires</h3>
+    </div>
+                {% for modeles in m %}
+                <div class="product">
+                    <div class="product-desc">
+                        <div class="product-img">
+                            <div></class><img src="{{ asset('aa.jpg')}}" width="90" height="90"/></div>
+
+                        </div>
+                        <div class="prod1-desc">
+
+                            <h5><a class="product_link" href="#"></a>nom de l utilisateur   :{{ modeles.nomuser }}</h5>
+                            <h5><a class="product_link" href="#"></a>le email  de l utilisateur   :{{ modeles.emailuser }}</h5>
+                            <h5 >{{ modeles.comm }} </h5>
+                            <p class="product_descr">date   :{{ modeles.dateCommentaire|date('d/m/Y') }} </p>
+
+                        </div>
+
+
+
+
+
+</div></div>
+
+                    {% endfor %}
+
+    <div class="product">
+    <div class="product-desc">
+
+
+    <div class="product_right">
+        <h3 class="m_2">ajouter commentaire</h3>
+    </div>
+
+                {% block commentaire %}
+                    {{ form_start (f) }}
+
+                    {{ form_end (f) }}
+
+        </div>
+
+                    </div></div></div></div>
+
+        </div></div>{% endblock %}
+            {% endblock %}
+

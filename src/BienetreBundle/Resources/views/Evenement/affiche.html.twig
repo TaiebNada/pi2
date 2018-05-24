@@ -1,0 +1,41 @@
+{% extends "@Bienetre/layoutbackoffice.html.twig" %}
+{% block evenements %}
+<h1>Liste des evenements</h1>
+<table id="table">
+    <tr>
+        <th>Id Evenement</th>
+        <th>Nom Evenement</th>
+        <th>Theme Evenement</th>
+        <th>Lieu evenement</th>
+        <th>nbr Participant evenement</th>
+        <th>nbr MAX Participant evenement</th>
+        <th>Date Evenement</th>
+        <th>Heure Evenement</th>
+        <th>Image</th>
+        <th>Description Evenement</th>
+    </tr>
+
+    {% for Evenements  in p %}
+        <tr>
+            <td> {{ Evenements.id }}</td>
+            <td> {{ Evenements.nomEvenement }}</td>
+            <td> {{ Evenements.themeEvenement }}</td>
+            <td> {{ Evenements.lieuEvenement }}</td>
+            <td> {{ Evenements.nbrParticipant }}</td>
+            <td> {{ Evenements.nbrMAXParticipant }}</td>
+            <td> {{ Evenements.dateEvenement|date('d/m/Y') }}</td>
+            <td> {{ Evenements.heureEvenement|date('m/h') }}</td>
+            <td><img src="{{ asset('uploads/images/evenement/'~ Evenements.imageEvenement) }}" alt="image" width="150" height="100" /></td>
+            <td> {{ Evenements.descriptionEvenement }}</td>
+            <td> <a href="{{ path ('_affichecommentaire',{'id':Evenements.id}) }}">afficher les commentaire</a></td>
+            <td> <a href="{{ path ('_updateevenement',{'id':Evenements.id}) }}">Update</a></td>
+            <td> <a href="{{ path ('_deleteevenement',{'id':Evenements.id}) }}">Delete</a></td>
+
+
+            </tr>
+    {% endfor %}
+
+    <tr>  <a href="{{ path ('_rechercheevenement') }}">Effectuer une recherche</a> </tr>
+
+</table>
+{% endblock %}

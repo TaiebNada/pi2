@@ -1,0 +1,17 @@
+<h1>Liste des commentaire</h1>
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>commentaire</th>
+    </tr>
+
+    {% for modeles in m %}
+        <tr>
+            <td> {{ modeles.name }}</td>
+            <td> {{ modeles.contenu }}</td>
+
+        </tr>
+    {% endfor %}
+
+
+</table>

@@ -1,0 +1,27 @@
+{% extends 'BackOffice/home.html.twig' %}
+
+{% block listeSuivi %}
+    <body>
+
+    {% for voitures in m %}
+    <div>
+
+        <h2>Justificatif pour M/me {{ voitures.nom  }}</h2>
+        <img src="{{ asset('uploads/images/evenement/'~ voitures.image) }}" alt="image"  width="400" height="400"/>
+
+    </div>
+
+
+
+    </body>
+
+        <footer>
+
+            <div class="btn_form">
+                <a href="{{ path('afficherDemande',{'id':voitures.id})   }}">Retour </a>
+            </div>
+        </footer>
+
+
+{% endfor %}
+    {% endblock %}

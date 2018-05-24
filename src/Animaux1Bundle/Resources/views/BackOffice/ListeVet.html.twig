@@ -1,0 +1,37 @@
+{% extends 'BackOffice/home.html.twig' %}
+
+{% block listeSuivi %}
+    <h2>Liste des veterinaires inscrits </h2>
+    <table id="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Cin</th>
+            <th>mail</th>
+           <th>Consulter justificatif</th>
+            <th>Afficher detail </th>
+            <th>Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for voitures in m %}
+        <tr>
+            <td> {{ voitures.nom }}</td>
+            <td> {{ voitures.prenom }}</td>
+            <td> {{ voitures.cin }}</td>
+            <td> {{ voitures.mail }}</td>
+            <td></td>
+            <td><a href="{{ path ('afficheDetailVet',{'id':voitures.id}) }}"> Afficher detail</a> </td>
+         <!--   <td>file upload </td>-->
+            <td> <a href="{{ path ('preDeleteVet',{'id':voitures.id}) }}">Supprimer </a> </td>
+
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+{% endblock %}

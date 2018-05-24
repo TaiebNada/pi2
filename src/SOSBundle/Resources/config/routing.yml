@@ -1,0 +1,60 @@
+sos_homepage:
+    path:     /
+    defaults: { _controller: SOSBundle:Default:index }
+adopter:
+   path: /Adopter
+   defaults: { _controller: SOSBundle:Animal:list}
+backlog_ajout:
+   path: /Backoffice/Ajout
+   defaults: { _controller: SOSBundle:Animal:ajout}
+adherer:
+   path: /Adherer
+   defaults: { _controller: SOSBundle:Animal:adherer}
+backoffice_list:
+   path: /Backoffice/list
+   defaults: { _controller: SOSBundle:Animal:listM}
+backoffice_delete:
+   path: /Backoffice/list/{id}
+   defaults: { _controller: SOSBundle:Animal:deleteM}
+review:
+   path: /Review/{id}
+   defaults: { _controller: SOSBundle:Animal:review}
+backoffice_ajout:
+   path: /Backoffice/ajout
+   defaults: { _controller: SOSBundle:Animal:listM}
+refuge:
+   path: /Refuge
+   defaults: { _controller: myMapBundle:Default:index}
+validation:
+   path: /Backoffice/Valider
+   defaults: { _controller: SOSBundle:Animal:validation}
+validerOK:
+   path: /Backoffice/Valider/{id}
+   defaults: { _controller: SOSBundle:Animal:valider}
+backoffice_recherche:
+    path: /Backoffice/list
+    defaults: { _controller: SOSBundle:Animal:recherche}
+recherche:
+  path: /Adopter
+  defaults: { _controller: SOSBundle:Animal:recherche}
+backoffice_update:
+    path:  /Backoffice/Ajout/{id}
+    defaults: { _controller: SOSBundle:Animal:Update }
+backoffice_list_client:
+    path: /Backoffice/Client/list
+    defaults: {_controller: UserBundle:User:listClient}
+backoffice_delete_client:
+   path: /Backoffice/Client/list/{id}
+   defaults: { _controller: UserBundle:User:deleteM}
+backoffice_list_animal_client:
+    path: /Backoffice/listAnimaux/Client/{id}
+    defaults: { _controller: SOSBundle:Animal:listCA}
+client_animal:
+   path: /AdhrZone
+   defaults: { _controller: SOSBundle:Animal:listCAmanage}
+client_delete_animal:
+   path: /AdhrZone
+   defaults: { _controller: SOSBundle:Animal:deleteC}
+client_update_animal:
+   path: /AdhrZone/{id}
+   defaults: { _controller: SOSBundle:Animal:updateC}

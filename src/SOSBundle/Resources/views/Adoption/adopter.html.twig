@@ -1,0 +1,67 @@
+{% extends '@SOS/Adoption/products.html.twig' %}
+  {% block front %}
+
+    {% for animal in animals %}
+
+
+<div class="box1">
+    <div class="col_1_of_single1 span_1_of_single1">
+        <div class="view1 view-fifth1">
+            <div class="top_box">
+                <h3 class="m_1">{{ animal.nom }}</h3>
+                <p class="m_2">{{ animal.espece }}</p>
+                <a href="{{ path('review', {'id': animal.id}) }}">
+                    <div class="grid_img">
+                        <div class="css3"><img src="{{ asset('uploads/images/evenement/'~ animal.image1) }}"  height="130" width="130"  alt=""/></div>
+                        <div class="mask1">
+                            <div class="info">Quick View</div>
+                        </div>
+                    </div>
+                    <div class="price">{{ animal.dateNaissance|date('Y-m-d') }}</div>
+            </div>
+        </div>
+        </a>
+        <div class="rtng">
+            <form action="" class="sky-form">
+                <fieldset>
+                    <section>
+                        <div class="rating">
+                            <input type="radio" name="stars-rating" id="stars-rating-5">
+                            <label for="stars-rating-5"><i class="icon-star"></i></label>
+                            <input type="radio" name="stars-rating" id="stars-rating-4">
+                            <label for="stars-rating-4"><i class="icon-star"></i></label>
+                            <input type="radio" name="stars-rating" id="stars-rating-3">
+                            <label for="stars-rating-3"><i class="icon-star"></i></label>
+                            <input type="radio" name="stars-rating" id="stars-rating-2">
+                            <label for="stars-rating-2"><i class="icon-star"></i></label>
+                            <input type="radio" name="stars-rating" id="stars-rating-1">
+                            <label for="stars-rating-1"><i class="icon-star"></i></label><span class="rtng">(5)<span>
+									<div class="clearfix"></div>
+                        </div>
+                    </section>
+                </fieldset>
+            </form>
+        </div>
+        <ul class="list2">
+            <li>
+                <img src="{{ asset('images/plus.png') }}" alt=""/>
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li><a class="active-icon c1" href="{{ asset('single.html') }}">Adopter </a>
+                        <ul class="sub-icon1 list">
+                            <li><h3>SOS</h3><a href=""></a></li>
+                            <li><p>Voulez-vous envoyer un mail au proprietaire <a href="">adipiscing elit, sed diam</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    {% endfor %}
+
+
+    {% endblock %}
+
+
+

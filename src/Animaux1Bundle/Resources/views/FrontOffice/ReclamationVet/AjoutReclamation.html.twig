@@ -1,0 +1,51 @@
+{% extends 'FrontOffice/Client/baseRec.html.twig' %}
+
+{% block Liste %}
+
+<head><link rel="stylesheet" href="{{ asset ('formMail/css/jquery-ui.css') }}"/>
+    <link href="{{ asset ('formMail/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/><!--stylesheet-css-->
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+    <!-- //css files --></head>
+
+
+<body>
+
+        <div class="w3l-from">
+            {{ form_start(f)}}
+                <div class="w3l-lef1">
+                    <h3>Veuillez nous informer sur les raisons pour l'échange</h3>
+                    <div class="w3l-num">
+                        <label class="head">Numéro de Telephone :<span class="w3l-star"> * </span></label>
+                        {{ form_widget(f.mobile) }}
+                    </div>
+                    <div class="w3l-left">
+                        <label class="head">Titre :<span class="w3l-star"> * </span></label>
+                        {{ form_widget(f.titre) }}
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="w3l-rem">
+                    <div class="w3l-right">
+                        <label class="w3l-set2">subject :</label>
+                        {{ form_widget(f.subject) }}
+                    </div>
+                    <div class="w3l-right">
+                        <label class="w3l-set2">Image :</label>
+                        {{ form_widget(f.imagereclamation) }}
+                    </div>
+                    <div class="btn_form">
+                        {{ form_widget(f.ajout)}}
+                    </div>
+                </div>
+                <div class="clear"></div>
+            {{ form_end(f) }}
+        </div>
+    <div class="btn_form">
+        <a href="{{ path ('listeVetFront') }}">Retour à ma liste </a>
+    </div>
+</body>
+
+{% endblock %}
+
+

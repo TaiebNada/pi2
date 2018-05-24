@@ -1,0 +1,87 @@
+
+
+
+_ajoutproduit:
+    path:     /ajoutproduit
+    defaults: { _controller: EcommerceBundle:Produit:Ajout }
+_rating:
+    path:     /rating
+    defaults: { _controller: EcommerceBundle:Produit:rating }
+_updateproduit:
+    path:     /updateproduit/{id}
+    defaults: { _controller: EcommerceBundle:Produit:Update }
+
+
+_deleteproduit:
+    path:     /deleteproduit/{id}
+    defaults: { _controller: EcommerceBundle:Produit:Delete }
+
+_rechercheproduit:
+    path:     /rechercheproduit
+    defaults: { _controller: EcommerceBundle:Produit:recherche }
+_afficheproduit:
+    path:     /afficheproduit
+    defaults: { _controller: EcommerceBundle:Produit:affiche }
+_affichefrontproduit:
+    path:     /affichefrontproduit
+    defaults: { _controller: EcommerceBundle:Produit:affiche2 }
+_affichecategorie:
+    path:     /affichecategorie/{categorie}
+    defaults: { _controller: EcommerceBundle:Produit:afficheCategorie }
+
+_single:
+    path:     /single/{id}-{nom}-{prix}-{image}-{quantite}
+    defaults: { _controller: EcommerceBundle:Produit:afficheSingle }
+
+_deletepanier:
+    path:  /deletepanier/{id}
+    defaults: { _controller: EcommerceBundle:Panier:supprimer }
+
+_ajoutpanier:
+    path:  /ajoutpanier/{id}
+    defaults: { _controller: EcommerceBundle:Panier:ajouter }
+
+_panier:
+    path:  /panier
+    defaults: { _controller: EcommerceBundle:Panier:panier }
+
+_livraisonpanier:
+    path:  /livraison
+    defaults: { _controller: EcommerceBundle:Panier:livraison }
+
+_validationpanier:
+    path:  /validation
+    defaults: { _controller: EcommerceBundle:Panier:validation }
+
+_livraisonAdresseSuppression:
+    path:  /livraison/adresse/suppression/{id}
+    defaults: { _controller: EcommerceBundle:Panier:adresseSuppression }
+
+_commande:
+    path:  /commande
+    defaults: { _controller: EcommerceBundle:Commande:commande }
+_affichec:
+    path:     /affichec
+    defaults: { _controller: EcommerceBundle:Commentaire:affichec }
+_ajout2c:
+    path:     /ajout2c
+    defaults: { _controller: EcommerceBundle:Commentaire:ajout2c }
+_ajoutlivreur:
+    path:     /ajoutlivreur
+    defaults: { _controller: EcommerceBundle:Livreur:Ajout }
+
+_updatelivreur:
+    path:     /updatelivreur/{id}
+    defaults: { _controller: EcommerceBundle:Livreur:Update }
+
+
+_deletelivreur:
+    path:     /deletelivreur/{id}
+    defaults: { _controller: EcommerceBundle:Livreur:Delete }
+
+_recherchelivreur:
+    path:     /recherchelivreur
+    defaults: { _controller: EcommerceBundle:Livreur:recherche }
+_affichelivreur:
+    path:     /affichelivreur
+    defaults: { _controller: EcommerceBundle:Livreur:affiche }

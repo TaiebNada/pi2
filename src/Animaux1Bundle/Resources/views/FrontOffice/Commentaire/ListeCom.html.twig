@@ -1,0 +1,17 @@
+{% extends 'FrontOffice/base.html.twig' %}
+
+{% block Container %}
+    <h2>Liste des Commentaires </h2>
+    {% for voitures in m %}
+        <lu>
+            <li>commentaire</li>
+            <li>{{ voitures.commentaire }}</li>
+        </lu>
+        <lu>
+            <li>Date</li>
+            <li>{{ voitures.date|date('Y-m-d') }}</li>
+        </lu>
+
+        {% endfor %}
+
+{% endblock %}

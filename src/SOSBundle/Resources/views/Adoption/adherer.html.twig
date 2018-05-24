@@ -1,0 +1,64 @@
+{% extends '@SOS/Adoption/adhererfront.html.twig' %}
+{% block adhererfront %}
+
+<fieldset>
+    <legend>Adherer </legend>
+    {{ form_start(f) }}
+    <table>
+        <tr>
+            <td>Espece</td>
+            <td>{{ form_widget(f.espece) }}</td>
+        </tr>
+        <tr>
+            <td>Race</td>
+            <td>{{ form_widget(f.race) }}</td>
+        </tr>
+        <tr>
+            <td>Nom</td>
+            <td>{{ form_widget(f.nom) }}</td>
+        </tr>
+        <tr>
+            <td>Sexe</td>
+            <td>{{ form_widget(f.sexe) }}</td>
+        </tr>
+        <tr>
+            <td>Image 1</td>
+            <td>{{ form_widget(f.image1) }}</td>
+        </tr>
+        <tr>
+            <td>Image 2</td>
+            <td>{{ form_widget(f.image2) }}</td>
+        </tr>
+        <tr>
+            <td>Image 3</td>
+            <td>{{ form_widget(f.image3) }}</td>
+        </tr>
+        <tr>
+            <td>Image 4</td>
+            <td>{{ form_widget(f.image4) }}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{ form_widget(f.description) }}</td>
+        </tr>
+        <tr>
+            <td>Date de Naissance</td>
+            <td>{{ form_widget(f.dateNaissance) }}</td>
+        </tr>
+        <tr>
+            <td>Numero</td>
+            <td>{{ form_widget(f.numero) }}</td>
+        </tr>
+        <tr>
+            <td>Taille</td>
+            <td>{{ form_widget(f.taille) }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{{ form_widget(f.Ajouter) }}</td>
+        </tr>
+    </table>
+    {{ form_end(f) }}
+</fieldset>
+
+{% endblock %}

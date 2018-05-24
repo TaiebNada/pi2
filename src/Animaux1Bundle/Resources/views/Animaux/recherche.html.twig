@@ -1,0 +1,38 @@
+<h1>Recheche Animal par nom</h1>
+<form method="post">
+    Libelle : <input type="text" name="nom">
+    <input type="submit" name="submit" value="recherche">
+
+
+
+
+
+</form>
+
+
+<table border="1">
+    <tr>
+        <th>nom</th>
+        <th>Date de naissance</th>
+        <th>Sexe</th>
+        <th>Espece</th>
+        <th>Race</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+
+    {% for voitures in v %}
+    <tr>
+        <td> {{ voitures.nom }}</td>
+        <td> {{ voitures.race }}</td>
+        <td> {{ voitures.dateNaissance|date('Y-m-d') }}</td>
+        <td> {{ voitures.espece }}</td>
+        <td> {{ voitures.sexe }}</td>
+        <td> <a href="{{ path ('modifier',{'id':voitures.id}) }}">Modifier</a></td>
+        <td> <a href="{{ path ('supprimer',{'id':voitures.id}) }}">Supprimer</a></td>
+    </tr>
+        {% endfor %}
+
+
+</table>

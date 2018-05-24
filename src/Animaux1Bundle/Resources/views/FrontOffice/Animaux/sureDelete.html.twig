@@ -1,0 +1,24 @@
+{% extends 'FrontOffice/Client/baseClient.html.twig' %}
+ {% block Liste %}
+
+         <div>
+             {% for voitures in m %}
+             <div>
+                 <h3>Etes vous sur que vous voulez supprimer la carte de {{ voitures.nom  }} </h3>
+              <!--   <img src="{{ asset('uploads/images/'~ voitures.image) }}" alt="image"  width="400" height="500"/>-->
+             </br>
+                 <img src="{{ asset('SuiviSante/images/dog.jpg') }}" alt="image"  width="300" height="300"/>
+
+             </div>
+             <div class="btn_form">
+                 <a href="{{ path ('deleteAnimal', {'id': voitures.id }) }}">Supprimer</a><span></span>
+                 <a href="{{ path ('detailAnimal',{'id': voitures.id }) }}">Annuler </a>
+
+             </div>
+
+     {% endfor %}
+
+         </div>
+
+
+ {% endblock %}

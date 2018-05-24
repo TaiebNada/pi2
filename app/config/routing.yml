@@ -1,0 +1,43 @@
+mail:
+    resource: "@MailBundle/Resources/config/routing.yml"
+    prefix:   /Mail
+
+graphe:
+    resource: "@GrapheBundle/Resources/config/routing.yml"
+    prefix:   /graphe
+
+my_map:
+    resource: "@MyMapBundle/Resources/config/routing.yml"
+    prefix:   /map
+
+bienetre:
+    resource: "@BienetreBundle/Resources/config/routing.yml"
+    prefix:   /Bienetre
+
+ecommerce:
+    resource: "@EcommerceBundle/Resources/config/routing.yml"
+    prefix:   /E
+
+Boutique:
+    resource: "@BoutiqueBundle/Resources/config/routing.yml"
+    prefix:   /B
+
+SOS:
+    resource: "@SOSBundle/Resources/config/routing.yml"
+    prefix:   /SOS
+
+Animaux:
+    resource: "@Animaux1Bundle/Resources/config/routing.yml"
+    prefix:   /Animaux
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
